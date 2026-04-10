@@ -1070,21 +1070,34 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #legacy .ack-quote {
   position: relative;
-  margin: 0 30px 24px 30px;
-  padding: 44px 24px 24px 24px;
+  /*margin: 0 30px 24px 30px;*/
+  margin: 0px auto 24px auto;
+  padding: 24px 24px 24px 24px;
   background: #eaedf2;
   border-radius: 12px;
   color: #4a5874;
   font-style: italic;
   font-size: inherit;
   line-height: 1.5;
+  width: fit-content;
 }
 
 #legacy .ack-quote::before {
   content: "\201C";
   position: absolute;
-  top: 8px;
+  top: -12px;
   left: 14px;
+  color: #c0c7d6;
+  font-size: 48px;
+  line-height: 1.5;
+  font-style: normal;
+}
+
+#legacy .ack-quote::after {
+  content: "\201E";
+  position: absolute;
+  bottom: 8px;
+  right: 14px;
   color: #c0c7d6;
   font-size: 48px;
   line-height: 1;
