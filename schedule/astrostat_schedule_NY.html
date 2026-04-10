@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroStat School — Schedule</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      padding: 2rem;
+      margin: 0;
+    }
+    .tbl-wrap { overflow-x: auto; padding: 0.5rem 0 1rem; }
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 4px;
+      table-layout: fixed;
+    }
+    th {
+      font-size: 11.5px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.6px;
+      padding: 10px 8px; text-align: center; border-radius: 6px;
+      background: #f0f0f0; color: #888;
+      border: 0.5px solid #ddd;
+    }
+    th.col-time { text-align: left; width: 13%; }
+    td { padding: 0; border-radius: 6px; vertical-align: middle; }
+    .slot-label {
+      height: 52px; padding: 0 10px;
+      background: #f0f0f0; color: #888;
+      font-size: 11px; font-weight: 500;
+      text-align: left;
+      border: 0.5px solid #ddd;
+      border-radius: 6px;
+      display: flex; align-items: center;
+      box-sizing: border-box;
+    }
+    .slot-break-label {
+      padding: 2px 10px;
+      background: transparent; color: #bbb;
+      font-size: 10px; font-style: italic;
+      text-align: left; white-space: nowrap;
+      display: flex; align-items: center; height: 18px;
+    }
+    .cell {
+      height: 52px; padding: 0 8px;
+      text-align: center; border-radius: 6px;
+      line-height: 1.35; font-weight: 500; font-size: 11.5px;
+      display: flex; align-items: center; justify-content: center;
+      box-sizing: border-box;
+    }
+    .cell-empty {
+      height: 52px;
+      background: #f0f0f0;
+      border: 0.5px solid #ddd;
+      border-radius: 6px; opacity: 0.35;
+      box-sizing: border-box;
+    }
+    .cell-instr {
+      background: #F1EFE8; color: #5F5E5A;
+      border: 0.5px solid #D3D1C7;
+      font-size: 11.5px; font-style: italic; font-weight: 500;
+      text-align: center; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      box-sizing: border-box; width: 100%;
+    }
+    .cell-end {
+      height: 52px;
+      background: #f0f0f0; color: #aaa;
+      border: 0.5px solid #ddd;
+      font-size: 11px; font-style: italic;
+      text-align: center; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      box-sizing: border-box;
+    }
+    /* Group 1: Statistics + Hypothesis + Fitting + GPU — teal */
+    .s-stat  { background: #E1F5EE; color: #085041; border: 0.5px solid #5DCAA5; }
+    /* Group 2: Bayesian + MCMC — purple */
+    .s-bayes { background: #EEEDFE; color: #3C3489; border: 0.5px solid #AFA9EC; }
+    /* Group 3: ML + DL — coral */
+    .s-ml    { background: #FAECE7; color: #712B13; border: 0.5px solid #F0997B; }
+    /* Group 4: SBI — green */
+    .s-sbi   { background: #EAF3DE; color: #27500A; border: 0.5px solid #97C459; }
+
+    .break-row td { padding: 0; height: 18px; }
+    .legend { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 1.25rem; }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #666; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+  <div class="tbl-wrap">
+    <table>
+      <colgroup>
+        <col style="width:13%">
+        <col style="width:17.4%">
+        <col style="width:17.4%">
+        <col style="width:17.4%">
+        <col style="width:17.4%">
+        <col style="width:17.4%">
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="col-time">Session</th>
+          <th>Monday 06/01</th>
+          <th>Tuesday 06/02</th>
+          <th>Wednesday 06/03</th>
+          <th>Thursday 06/04</th>
+          <th>Friday 06/05</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="slot-label">Morning 1</div></td>
+          <td><div class="cell s-stat">Basic Statistics</div></td>
+          <td rowspan="3" style="padding:0; vertical-align:top;">
+            <div class="cell-instr" style="height: calc(52px + 18px + 52px + 14px);">Instructor day<br>No lectures for school participants</div>
+          </td>
+          <td><div class="cell s-bayes">Bayesian II</div></td>
+          <td><div class="cell s-ml">ML Intro + Clustering</div></td>
+          <td><div class="cell s-ml">Neural Network Workshop</div></td>
+        </tr>
+        <tr class="break-row">
+          <td><div class="slot-break-label">coffee break</div></td>
+          <td><div style="height:18px;"></div></td>
+          <td><div style="height:18px;"></div></td>
+          <td><div style="height:18px;"></div></td>
+          <td><div style="height:18px;"></div></td>
+        </tr>
+        <tr>
+          <td><div class="slot-label">Morning 2</div></td>
+          <td><div class="cell s-stat">Hypothesis Testing</div></td>
+          <td><div class="cell s-bayes">MCMC I</div></td>
+          <td><div class="cell s-ml">ML Classification</div></td>
+          <td><div class="cell s-sbi">SBI I</div></td>
+        </tr>
+        <tr class="break-row">
+          <td><div class="slot-break-label">lunch break</div></td>
+          <td><div style="height:18px;"></div></td>
+          <td><div style="height:18px;"></div></td>
+          <td><div style="height:18px;"></div></td>
+          <td><div style="height:18px;"></div></td>
+          <td><div style="height:18px;"></div></td>
+        </tr>
+        <tr>
+          <td><div class="slot-label">Afternoon 1</div></td>
+          <td><div class="cell s-stat">Fitting / Optimization</div></td>
+          <td><div class="cell-empty"></div></td>
+          <td><div class="cell s-bayes">MCMC II</div></td>
+          <td><div class="cell s-ml">ML Best Practices</div></td>
+          <td><div class="cell s-sbi">SBI II</div></td>
+        </tr>
+        <tr class="break-row">
+          <td><div class="slot-break-label">coffee break</div></td>
+          <td><div style="height:18px;"></div></td>
+          <td><div style="height:18px;"></div></td>
+          <td><div style="height:18px;"></div></td>
+          <td><div style="height:18px;"></div></td>
+          <td><div style="height:18px;"></div></td>
+        </tr>
+        <tr>
+          <td><div class="slot-label">Afternoon 2</div></td>
+          <td><div class="cell s-bayes">Bayesian I</div></td>
+          <td><div class="cell-empty"></div></td>
+          <td><div class="cell s-stat">GPUs</div></td>
+          <td><div class="cell s-ml">Deep Learning Intro + Regression</div></td>
+          <td><div class="cell-end">Conclusions</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#E1F5EE;border:1px solid #5DCAA5;"></div>Basic Statistics</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#EEEDFE;border:1px solid #AFA9EC;"></div>Bayesian and MCMC</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#FAECE7;border:1px solid #F0997B;"></div>Machine/Deep Learning</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#EAF3DE;border:1px solid #97C459;"></div>Simulation Based Inference</div>
+  </div>
+</body>
+</html>
